@@ -1,0 +1,50 @@
+@use 'vars';
+
+* {
+	outline: #10b145;
+}
+
+body {
+	min-height: 100vh;
+	color: vars.$black-90;
+	background: vars.$bg-main;
+	font-family: vars.$font-family;
+	line-height: 1.2;
+	font-size: 16px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	//display: flex;
+	width: 100%;
+	position: relative;
+}
+
+body:has(.burger-content) {
+	overflow: hidden;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	transition: opacity 0.2s ease;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.15s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}

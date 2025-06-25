@@ -1,0 +1,24 @@
+@use 'base' as *; // base → _index.scss → forward vars
+@use 'mixins' as *; // mixins → _index.scss → forward mixins
+
+html {
+	// scrollbar-gutter: stable;
+}
+
+#__nuxt {
+	min-width: 375px;
+	margin: 0 auto;
+	font-weight: normal;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	// padding-top: 100px;
+
+	// @include tablet {
+	//   padding-top: 170px;
+	// }
+}
+
+main {
+	flex: 1;
+}

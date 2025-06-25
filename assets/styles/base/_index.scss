@@ -1,0 +1,9 @@
+@use 'normalize';
+@use 'reset';
+@use 'vars';
+@use 'fonts';
+@use 'container';
+@use 'base';
+
+@forward 'vars'; // экспортирует переменные
+@forward 'fonts'; // если есть переменные или миксины в fonts.scss
