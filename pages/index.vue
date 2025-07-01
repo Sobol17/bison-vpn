@@ -7,6 +7,13 @@
 	</div>
 	<StatisticSection />
 	<CompareSection />
+	<TryNowBanner />
+	<Tariffs />
+	<PremiumIncludes />
+	<ReviewsSection />
+	<PremiumBanner />
+	<FaqSection />
+	<PartnersSection />
 </template>
 
 <script setup></script>

@@ -7,12 +7,13 @@
 <script setup lang="ts">
 interface Props {
 	secondary?: boolean
+	tertiary?: boolean
 }
 
 const props = defineProps<Props>()
 
 const styleVariants = computed(() => {
-	return { secondary: props.secondary }
+	return { secondary: props.secondary, tertiary: props.tertiary }
 })
 
 const emit = defineEmits<{
@@ -60,6 +61,23 @@ const handleClick = (event: MouseEvent) => {
 
 		&:active {
 			color: #95db44;
+		}
+	}
+
+	&.tertiary {
+		background-color: transparent;
+		color: $black-80;
+		border: 0.5px dashed $black-80;
+
+		&:hover {
+			background-color: $white;
+			color: $black-90;
+		}
+
+		&:active {
+			opacity: 0.6;
+			border: 0.5px dashed $grey-100;
+			background: $grey-15;
 		}
 	}
 }

@@ -25,7 +25,7 @@ import { statisticsData } from '~/shared/data/homeData'
 	}
 
 	&-block {
-		flex: 0 1 calc(25% - 18px);
+		flex: 0 1 calc(25% - 20px);
 
 		@include big-mobile {
 			flex: 0 1 100%;

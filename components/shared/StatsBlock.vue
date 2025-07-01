@@ -30,10 +30,11 @@ defineProps<Props>()
 			align-items: center;
 			justify-content: center;
 			font-size: 50px;
-			line-height: 700;
+			font-weight: 700;
 			line-height: 1.3;
 			color: $black-90;
 			column-gap: 10px;
+
 			span {
 				text-wrap: nowrap;
 			}
