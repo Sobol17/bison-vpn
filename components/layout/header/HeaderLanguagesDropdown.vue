@@ -26,6 +26,7 @@
 <style lang="scss" scoped>
 .dropdown {
 	position: absolute;
+	z-index: 2;
 	top: 50px;
 	padding: 12px;
 	border-radius: 12px;

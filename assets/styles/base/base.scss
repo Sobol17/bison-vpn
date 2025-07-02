@@ -19,7 +19,7 @@ body {
 	position: relative;
 }
 
-body:has(.burger-content) {
+body:has(.modal) {
 	overflow: hidden;
 }
 

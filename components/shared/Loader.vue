@@ -1,0 +1,27 @@
+<template>
+	<span class="loader"></span>
+</template>
+
+<script lang="ts" setup></script>
+
+<style scoped lang="scss">
+.loader {
+	width: 40px;
+	height: 40px;
+	border: 3px solid $grey-100;
+	border-bottom-color: $white;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+</style>

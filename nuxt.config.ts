@@ -15,6 +15,6 @@ export default defineNuxtConfig({
 	},
 
 	components: [{ path: '~/components', pathPrefix: false }],
-	modules: ['@nuxt/image'],
+	modules: ['@nuxt/image', '@pinia/nuxt'],
 	devtools: { enabled: true },
 })

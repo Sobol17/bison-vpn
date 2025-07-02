@@ -1,5 +1,5 @@
 <template>
-	<div class="footer">
+	<div class="footer" :class="{ 'home-footer': isIndexPage }">
 		<div class="container footer__inner">
 			<div class="footer-col">
 				<img src="/logo.svg" alt="" />
@@ -60,11 +60,17 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const route = useRoute()
+
+const isIndexPage = computed(() => {
+	return route.fullPath === '/'
+})
+</script>
 
 <style lang="scss" scoped>
 .footer {
-	background-color: $black-100;
+	background-color: #010101;
 	padding: 70px 0px;
 
 	&__inner {
@@ -140,6 +146,14 @@
 				}
 			}
 		}
+	}
+}
+
+.home-footer {
+	padding-top: 237px;
+
+	@include big-mobile {
+		padding-top: 480px;
 	}
 }
 

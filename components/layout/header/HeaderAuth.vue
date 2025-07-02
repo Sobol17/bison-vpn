@@ -1,11 +1,15 @@
 <template>
-	<button class="login" title="Вход/регистрация">
+	<button @click="globalStore.openLogin" class="login" title="Вход/регистрация">
 		<img src="/icons/icon_user.svg" alt="" />
 		<span>Вход/регистрация</span>
 	</button>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { useMyGlobalStore } from '~/store/global'
+
+const globalStore = useMyGlobalStore()
+</script>
 
 <style lang="scss" scoped>
 .login {

@@ -38,3 +38,9 @@ export type Author = {
 	avatar: string
 	name: string
 }
+
+export interface IBannerData {
+	title: string
+	text: string
+	btnText: string
+}

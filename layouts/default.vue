@@ -1,7 +1,3 @@
-<script setup>
-const route = useRoute()
-</script>
-
 <template>
 	<div class="layout">
 		<Header class="header" />
@@ -10,8 +6,24 @@ const route = useRoute()
 		</main>
 		<Footer class="footer" />
 	</div>
-	<div id="modals"></div>
+	<div id="modals">
+		<transition name="fade">
+			<AuthModal v-if="globalStore.isLoginModalShow" />
+		</transition>
+
+		<transition name="fade">
+			<CopyChip v-if="globalStore.isCopyChipShow" />
+		</transition>
+	</div>
 </template>
+
+<script setup lang="ts">
+import { useMyGlobalStore } from '~/store/global'
+
+const route = useRoute()
+
+const globalStore = useMyGlobalStore()
+</script>
 
 <style lang="scss" scoped>
 .layout {

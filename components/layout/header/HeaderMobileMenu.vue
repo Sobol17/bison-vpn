@@ -12,7 +12,7 @@
 				</button>
 			</div>
 			<div class="burger-content__body">
-				<Button>
+				<Button @click="globalStore.openLogin">
 					<IconUser />
 					<span>Вход/регистрация</span>
 					<ArrowRight />
@@ -29,6 +29,10 @@
 </template>
 
 <script setup lang="ts">
+import { useMyGlobalStore } from '~/store/global'
+
+const globalStore = useMyGlobalStore()
+
 const isMenuShow = ref(false)
 const toggleMenu = () => {
 	isMenuShow.value = !isMenuShow.value

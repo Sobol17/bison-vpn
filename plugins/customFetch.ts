@@ -5,7 +5,7 @@ export default defineNuxtPlugin(() => {
 	const route = useRoute()
 
 	const customFetch = $fetch.create({
-		baseURL: 'https://testdevback.etexpress.ru/api ',
+		baseURL: 'http://localhost:8000',
 
 		credentials: 'include',
 

@@ -14,6 +14,7 @@
 	<PremiumBanner />
 	<FaqSection />
 	<PartnersSection />
+	<VideoSection />
 </template>
 
 <script setup></script>

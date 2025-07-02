@@ -1,5 +1,11 @@
 <template>
-	<button @click="handleClick" class="button" :class="styleVariants">
+	<button
+		@click="handleClick"
+		class="button"
+		:class="styleVariants"
+		:type="type ?? 'button'"
+		:disabled="disabled"
+	>
 		<slot></slot>
 	</button>
 </template>
@@ -8,6 +14,8 @@
 interface Props {
 	secondary?: boolean
 	tertiary?: boolean
+	type?: 'button' | 'submit' | 'reset'
+	disabled?: boolean
 }
 
 const props = defineProps<Props>()
@@ -41,26 +49,17 @@ const handleClick = (event: MouseEvent) => {
 	transition: all 0.24s ease-in-out;
 	text-wrap: nowrap;
 
-	&:hover {
-		background-color: $white;
-	}
-
 	&:active {
 		background-color: $white;
-		opacity: 0.6;
 	}
 
 	&.secondary {
 		background-color: $black-90;
 		color: $white;
 
-		&:hover {
+		&:active {
 			background-color: $primary;
 			color: $black-90;
-		}
-
-		&:active {
-			color: #95db44;
 		}
 	}
 
@@ -69,15 +68,50 @@ const handleClick = (event: MouseEvent) => {
 		color: $black-80;
 		border: 0.5px dashed $black-80;
 
-		&:hover {
+		&:active {
 			background-color: $white;
 			color: $black-90;
 		}
+	}
+
+	&:disabled {
+		background-color: $grey-60 !important;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.button {
+		&:hover {
+			background-color: $white;
+		}
 
 		&:active {
+			background-color: $white;
 			opacity: 0.6;
-			border: 0.5px dashed $grey-100;
-			background: $grey-15;
+		}
+
+		&.secondary {
+			&:hover {
+				background-color: $primary;
+				color: $black-90;
+			}
+
+			&:active {
+				color: #95db44;
+			}
+		}
+
+		&.tertiary {
+			&:hover {
+				background-color: $white;
+				color: $black-90;
+			}
+
+			&:active {
+				opacity: 0.6;
+				border: 0.5px dashed $grey-100;
+				background: $grey-15;
+			}
 		}
 	}
 }
