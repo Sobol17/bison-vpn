@@ -543,3 +543,13 @@ export const premiumTrialBannerData = {
 	text: 'Безлимитный трафик, высокая скорость и полная анонимность. Заберите подарок прямо сейчас.',
 	btnText: 'Стать Premium',
 }
+
+export const tariffsPaymentIcons: string[] = [
+	'/icons/payments/umoney.png',
+	'/icons/payments/apple-pay.svg',
+	'/icons/payments/visa.svg',
+	'/icons/payments/webmoney.svg',
+	'/icons/payments/qiwi.svg',
+	'/icons/payments/google-pay.svg',
+	'/icons/payments/mastercard.svg',
+]

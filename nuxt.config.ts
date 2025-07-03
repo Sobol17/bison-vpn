@@ -17,8 +17,4 @@ export default defineNuxtConfig({
 	components: [{ path: '~/components', pathPrefix: false }],
 	modules: ['@nuxt/image', '@pinia/nuxt'],
 	devtools: { enabled: true },
-
-	nitro: {
-		plugins: ['~/server/middleware/auth.middleware.ts'],
-	},
 })

@@ -1,4 +1,5 @@
 @use 'vars';
+@use '../mixins/media';
 
 * {
 	outline: #10b145;
@@ -47,4 +48,17 @@ a {
 .fade-enter-from,
 .fade-leave-to {
 	opacity: 0;
+}
+
+.profile-title {
+	color: vars.$black-90;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%;
+	margin-bottom: 24px;
+
+	@include media.big-mobile {
+		font-size: 28px;
+	}
 }

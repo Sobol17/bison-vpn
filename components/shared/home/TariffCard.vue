@@ -22,8 +22,10 @@
 				</li>
 			</ul>
 		</div>
-		<Button @click="globalStore.openLogin" v-if="!darkStyle" secondary>{{ tariff.btnText }}</Button>
-		<Button @click="globalStore.openLogin" v-else>{{ tariff.btnText }}</Button>
+		<Button @click="globalStore.openSubscribe" v-if="!darkStyle" secondary>{{
+			tariff.btnText
+		}}</Button>
+		<Button @click="globalStore.openSubscribe" v-else>{{ tariff.btnText }}</Button>
 	</div>
 </template>
 

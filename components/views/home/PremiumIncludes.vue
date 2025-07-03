@@ -1,8 +1,8 @@
 <template>
 	<div class="container premium-includes">
-		<h3 class="premium-includes__title">Что входит в Premium?</h3>
+		<h3 class="premium-includes__title">{{ title }}</h3>
 		<PremiumIncludesList />
-		<Button @click="globalStore.openLogin" class="premium-includes__btn"
+		<Button @click="globalStore.openSubscribe" class="premium-includes__btn"
 			>Попробовать 10 дней за 19 руб.</Button
 		>
 	</div>
@@ -10,6 +10,14 @@
 
 <script lang="ts" setup>
 import { useMyGlobalStore } from '~/store/global'
+
+interface Props {
+	title?: string
+}
+
+withDefaults(defineProps<Props>(), {
+	title: 'Что входит в Premium?',
+})
 
 const globalStore = useMyGlobalStore()
 </script>

@@ -1,17 +1,14 @@
 <template>
 	<div class="bg-container">
 		<div class="container hero__container">
-			<Breadcrumb page-url="/key" page-slug="Ключ" />
+			<Breadcrumb page-url="/profile" page-slug="Личный кабинет" />
 			<div class="hero__content">
-				<h1 class="title">Premium ключ доступен</h1>
+				<h1 class="title">Личный кабинет</h1>
 				<p class="hero__text">
-					Простое управление подключением: скопируйте ключ, загрузите его в приложение и
-					наслаждайтесь безопасным и быстрым соединением. <br />
-					<span
-						>Вы всегда сможете вернуться на эту страницу в
-						<NuxtLink to="profile">личном кабинете.</NuxtLink></span
-					>
+					Простое управление аккаунтом: редактируйте данные, <br />
+					настраивайте сервис и управляйте подпиской в одном месте.
 				</p>
+				<Button @click="router.push('/key')" class="hero__btn">Перейти к моим ключам</Button>
 			</div>
 			<div class="hero__video">
 				<video src="/video/hero.mp4" muted autoplay loop></video>
@@ -21,9 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { useMyGlobalStore } from '~/store/global'
-
-const globalStore = useMyGlobalStore()
+const router = useRouter()
 </script>
 
 <style lang="scss" scoped>
@@ -86,6 +81,10 @@ const globalStore = useMyGlobalStore()
 		@include big-mobile {
 			height: 590px;
 		}
+	}
+
+	&__btn {
+		margin-top: 32px;
 	}
 
 	&__block {

@@ -1,13 +1,15 @@
 <template>
 	<ul class="breadcrumbs">
 		<li class="breadcrumbs__item">
-			<NuxtLink class="breadcrumbs__link" to="/">Главная</NuxtLink>
+			<NuxtLink class="breadcrumbs__link" to="/" :class="{ dark: route.path === '/privacy' }"
+				>Главная</NuxtLink
+			>
 		</li>
 
 		<li class="breadcrumbs__item">
-			<NuxtLink class="breadcrumbs__link" :class="{ active: route.path === pageUrl }" to="/key"
-				>Ключ</NuxtLink
-			>
+			<NuxtLink class="breadcrumbs__link" :class="{ active: route.path === pageUrl }" to="/key">{{
+				pageSlug
+			}}</NuxtLink>
 		</li>
 	</ul>
 </template>
@@ -15,6 +17,7 @@
 <script lang="ts" setup>
 interface Props {
 	pageUrl: string
+	pageSlug: string
 }
 
 defineProps<Props>()
@@ -50,6 +53,10 @@ const route = useRoute()
 
 		&.active {
 			color: $accent;
+		}
+
+		&.dark {
+			color: $grey-100;
 		}
 	}
 }
