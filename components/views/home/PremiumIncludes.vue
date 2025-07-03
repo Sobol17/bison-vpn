@@ -1,15 +1,7 @@
 <template>
 	<div class="container premium-includes">
 		<h3 class="premium-includes__title">Что входит в Premium?</h3>
-		<div class="premium-includes__items">
-			<PremiumInclude
-				class="premium-includes__item"
-				v-for="item in premiumIncludesData"
-				:icon="item.icon"
-				:text="item.text"
-				:title="item.title"
-			/>
-		</div>
+		<PremiumIncludesList />
 		<Button @click="globalStore.openLogin" class="premium-includes__btn"
 			>Попробовать 10 дней за 19 руб.</Button
 		>
@@ -17,7 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import { premiumIncludesData } from '~/shared/data/homeData'
 import { useMyGlobalStore } from '~/store/global'
 
 const globalStore = useMyGlobalStore()

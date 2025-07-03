@@ -8,28 +8,11 @@
 					<br />соединения скоростью от <span class="hero__accent--black">90 Mb/s</span> по
 					SpeedTest
 				</p>
-				<Button @click="globalStore.openLogin" class="hero__btn"
+				<Button @click="globalStore.openSubscribe" class="hero__btn"
 					>Попробовать 10 дней за 19 руб.</Button
 				>
 				<div class="hero__info">
-					<div class="hero__rating">
-						<div class="hero__rating-title">
-							<span>Рейтинг</span>
-							<img src="/icons/rating_logo.svg" alt="" />
-							<span>toptechnohub</span>
-						</div>
-						<div class="hero__rating-body">
-							<span class="hero__rating-num">4.9</span>
-							<div class="hero__rating-stars">
-								<Star />
-								<Star />
-								<Star />
-								<Star />
-								<Star half />
-							</div>
-							<span class="hero__rating-count">(5,344)</span>
-						</div>
-					</div>
+					<RatingBenefitBlock />
 					<div class="hero__users">
 						<div class="hero__users-title"><span>5 234</span> пользователей уже с нами</div>
 						<div class="hero__users-body">
@@ -48,12 +31,7 @@
 				</div>
 				<div class="hero__block-text">50 000+</div>
 			</div>
-			<div class="hero__block hero__block--speed">
-				<div class="hero__block-title">
-					<img src="/icons/Speedtest.net_logo.svg" alt="" />
-				</div>
-				<div class="hero__block-text"><span>Скорость</span> 97+ Mb/s</div>
-			</div>
+			<SpeedBenefitBlock class="hero__block--speed" />
 			<div class="hero__video">
 				<video src="/video/hero.mp4" muted autoplay loop></video>
 			</div>
@@ -249,47 +227,6 @@ const globalStore = useMyGlobalStore()
 
 		@include big-mobile {
 			flex-wrap: wrap;
-		}
-	}
-
-	&__rating {
-		border-radius: 12px;
-		background: var(
-			--Linear-2,
-			linear-gradient(97deg, rgba(61, 61, 61, 0.3) -26.33%, rgba(194, 194, 194, 0) 105.53%)
-		);
-		padding: 14px 14px 12px 14px;
-
-		&-title {
-			font-weight: 600;
-			font-size: 12px;
-			color: $white;
-			display: flex;
-			column-gap: 4px;
-		}
-
-		&-body {
-			display: flex;
-			align-items: center;
-			column-gap: 5px;
-			margin-top: 10px;
-		}
-
-		&-num {
-			font-size: 20px;
-			font-weight: 800;
-			color: $grey-25;
-		}
-
-		&-count {
-			font-size: 11px;
-			color: $grey-100;
-		}
-
-		&-stars {
-			display: flex;
-			align-items: center;
-			column-gap: 2px;
 		}
 	}
 

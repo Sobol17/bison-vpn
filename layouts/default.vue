@@ -12,6 +12,10 @@
 		</transition>
 
 		<transition name="fade">
+			<Subscribe v-if="globalStore.isSubscribeModalShow" />
+		</transition>
+
+		<transition name="fade">
 			<CopyChip v-if="globalStore.isCopyChipShow" />
 		</transition>
 	</div>

@@ -2,10 +2,15 @@ import { defineStore } from 'pinia'
 
 export const useMyGlobalStore = defineStore('global', () => {
 	const isLoginModalShow = ref(false)
+	const isSubscribeModalShow = ref(false)
 	const isCopyChipShow = ref(false)
 
 	const openLogin = () => {
 		isLoginModalShow.value = true
+	}
+
+	const openSubscribe = () => {
+		isSubscribeModalShow.value = true
 	}
 
 	const openCopyChip = () => {
@@ -16,5 +21,18 @@ export const useMyGlobalStore = defineStore('global', () => {
 		}, 1400)
 	}
 
-	return { isLoginModalShow, openLogin, isCopyChipShow, openCopyChip }
+	const hideModals = () => {
+		isLoginModalShow.value = false
+		isSubscribeModalShow.value = false
+	}
+
+	return {
+		isLoginModalShow,
+		openLogin,
+		isCopyChipShow,
+		openCopyChip,
+		openSubscribe,
+		isSubscribeModalShow,
+		hideModals,
+	}
 })

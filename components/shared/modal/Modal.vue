@@ -18,7 +18,7 @@ import { useMyGlobalStore } from '~/store/global'
 const globalStore = useMyGlobalStore()
 
 const handleCloseModal = () => {
-	globalStore.isLoginModalShow = false
+	globalStore.hideModals()
 }
 </script>
 
@@ -37,7 +37,7 @@ const handleCloseModal = () => {
 	backdrop-filter: blur(4px);
 
 	&__inner {
-		max-width: 1000px;
+		max-width: 1280px;
 		height: auto;
 		position: relative;
 
@@ -49,6 +49,7 @@ const handleCloseModal = () => {
 			width: 100%;
 			height: 100%;
 			border-radius: 0;
+			overflow-y: auto;
 		}
 	}
 

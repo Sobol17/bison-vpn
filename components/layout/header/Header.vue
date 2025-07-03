@@ -1,7 +1,7 @@
 <template>
 	<div class="header">
 		<div class="container header__inner">
-			<img src="/logo.svg" alt="" />
+			<NuxtLink to="/"><img src="/logo.svg" alt="" /></NuxtLink>
 
 			<HeaderNav class="tablet-hide" />
 
