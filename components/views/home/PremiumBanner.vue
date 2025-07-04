@@ -151,7 +151,7 @@ const globalStore = useMyGlobalStore()
 			flex: auto;
 			width: 100%;
 			background: linear-gradient(180deg, #1f1f1f 25.35%, rgba(0, 0, 0, 0) 147.2%),
-				url('../../public/images/home/premium-mobile-bg.jpg') 0.272px 1px / 191.671% 100% no-repeat;
+				url('/images/home/premium-mobile-bg.jpg') 0.272px 1px / 191.671% 100% no-repeat;
 		}
 
 		@include small-mobile {

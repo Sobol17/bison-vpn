@@ -43,7 +43,7 @@ const route = useRoute()
 				display: block;
 				width: 20px;
 				height: 20px;
-				background: url('../../public/icons/icon_chevron.svg') no-repeat;
+				background: url('/icons/icon_chevron.svg') no-repeat;
 			}
 		}
 	}

@@ -32,6 +32,16 @@ const handleClick = (event: MouseEvent) => {
 .block {
 	width: 100%;
 	flex-shrink: 0;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px solid #d5d8e3;
+	background: $grey-20;
+	display: flex;
+	align-items: center;
+	column-gap: 14px;
+	transition: all 0.24s ease-in-out;
+	cursor: pointer;
+
 	&__text {
 		font-size: 16px;
 		font-style: normal;
@@ -44,16 +54,6 @@ const handleClick = (event: MouseEvent) => {
 			font-size: 14px;
 		}
 	}
-
-	padding: 16px;
-	border-radius: 12px;
-	border: 0.5px solid #d5d8e3;
-	background: $grey-20;
-	display: flex;
-	align-items: center;
-	column-gap: 14px;
-	transition: all 0.24s ease-in-out;
-	cursor: pointer;
 
 	&:hover {
 		border-color: transparent;
