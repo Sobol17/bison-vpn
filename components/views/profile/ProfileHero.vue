@@ -8,7 +8,9 @@
 					Простое управление аккаунтом: редактируйте данные, <br />
 					настраивайте сервис и управляйте подпиской в одном месте.
 				</p>
-				<Button @click="router.push('/key')" class="hero__btn">Перейти к моим ключам</Button>
+				<Button v-if="accountStore.isSubscribed" @click="router.push('/key')" class="hero__btn"
+					>Перейти к моим ключам</Button
+				>
 			</div>
 			<div class="hero__video">
 				<video src="/video/hero.mp4" muted autoplay loop></video>
@@ -18,7 +20,11 @@
 </template>
 
 <script setup lang="ts">
+import { useAccountStore } from '~/store/account'
+
 const router = useRouter()
+
+const accountStore = useAccountStore()
 </script>
 
 <style lang="scss" scoped>

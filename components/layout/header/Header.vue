@@ -1,7 +1,9 @@
 <template>
 	<div class="header">
 		<div class="container header__inner">
-			<NuxtLink to="/"><img src="/logo.svg" alt="" /></NuxtLink>
+			<NuxtLink v-if="!accountStore.isSubscribed" to="/"><img src="/logo.svg" alt="" /></NuxtLink>
+
+			<NuxtLink v-else to="/"><img src="/logo_premium.svg" alt="" /></NuxtLink>
 
 			<HeaderNav class="tablet-hide" />
 
@@ -16,7 +18,24 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useAccountStore } from '~/store/account'
+
+const accountStore = useAccountStore()
+
+const route = useRoute()
+
+// TODO: перед запуском в прод. убрать после проверки.
+onMounted(() => {
+	if (route.fullPath === '/indexPremium') {
+		accountStore.isSubscribed = true
+		accountStore.isAuth = true
+	} else if (route.fullPath === '/') {
+		accountStore.isSubscribed = false
+		accountStore.isAuth = false
+	}
+})
+</script>
 
 <style lang="scss" scoped>
 .header {

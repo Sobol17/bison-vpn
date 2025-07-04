@@ -1,5 +1,5 @@
 <template>
-	<section class="container faq-section">
+	<section id="faq" class="container faq-section">
 		<div class="faq__title">Часто спрашивают</div>
 		<p class="faq__text">
 			У вас остались вопросы? Мы собрали самые популярные запросы пользователей и подготовили

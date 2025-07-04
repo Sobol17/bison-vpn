@@ -1,14 +1,28 @@
 <template>
-	<button @click="globalStore.openLogin" class="login" title="Вход/регистрация">
+	<button
+		v-if="!accountStore.isAuth"
+		@click="globalStore.openLogin"
+		class="login"
+		title="Вход/регистрация"
+	>
 		<img src="/icons/icon_user.svg" alt="" />
 		<span>{{ $t('login') }}</span>
+	</button>
+	<button v-else @click="router.push('/profile')" class="login" title="Вход/регистрация">
+		<img src="/icons/icon_user.svg" alt="" />
+		<span>{{ $t('login_auth') }}</span>
 	</button>
 </template>
 
 <script setup lang="ts">
+import { useAccountStore } from '~/store/account'
 import { useMyGlobalStore } from '~/store/global'
 
+const router = useRouter()
+
 const globalStore = useMyGlobalStore()
+
+const accountStore = useAccountStore()
 </script>
 
 <style lang="scss" scoped>

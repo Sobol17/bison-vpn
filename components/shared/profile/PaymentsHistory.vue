@@ -13,7 +13,7 @@
 				</template>
 			</ProfileSettingsBlock>
 		</div>
-		<div class="history__empty">
+		<div v-else class="history__empty">
 			<img src="/icons/history_empty.svg" alt="" />
 			<div class="history__empty-title">История пока отсутствует</div>
 		</div>

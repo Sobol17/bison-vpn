@@ -30,19 +30,19 @@
 				<div class="footer-col__title">Навигация</div>
 				<ul class="footer-col__list">
 					<li class="footer-col__list-item">
-						<NuxtLink to="/about">О сервисе</NuxtLink>
+						<NuxtLink to="/#about">О сервисе</NuxtLink>
 					</li>
 					<li class="footer-col__list-item">
-						<NuxtLink to="/product">О продукте</NuxtLink>
+						<NuxtLink to="/#about">О продукте</NuxtLink>
 					</li>
 					<li class="footer-col__list-item">
-						<NuxtLink to="/tariffs">Тарифы</NuxtLink>
+						<NuxtLink to="/#tariffs">Тарифы</NuxtLink>
 					</li>
 					<li class="footer-col__list-item">
-						<NuxtLink to="/reviews">Отзывы</NuxtLink>
+						<NuxtLink to="/#reviews">Отзывы</NuxtLink>
 					</li>
 					<li class="footer-col__list-item">
-						<NuxtLink to="/faq">Часто спрашивают</NuxtLink>
+						<NuxtLink to="/#faq">Часто спрашивают</NuxtLink>
 					</li>
 				</ul>
 			</div>

@@ -1,26 +1,5 @@
 <template>
-	<div v-if="subscriptionStore.isSubscriptionSuccess" class="container result">
-		<img class="result__img" src="/images/subscription/done.gif" alt="" />
-		<h1 class="result__title">Подписка успешно оплачена!</h1>
-		<p class="result__text">
-			Подписка “VIP” на 1 месяц активна. Теперь вам доступны эксклюзивные <br />
-			функции.
-			<NuxtLink to="/">Протестируйте их</NuxtLink>
-			прямо сейчас
-		</p>
-		<Button @click="router.push('/key')" class="result__btn">Получить Premium ключ</Button>
-
-		<div class="includes">
-			<h3 class="includes__title">Эксклюзивные функци:</h3>
-			<PremiumIncludesList />
-			<p class="includes__text">
-				Управляйте подпиской в личном кабинете. Если у вас возникли вопросы, <br />
-				свяжитесь с нашей
-				<NuxtLink to="/">технической поддержкой</NuxtLink>
-			</p>
-		</div>
-	</div>
-	<div v-else class="container result failed">
+	<div class="container result failed">
 		<img class="result__img" src="/images/subscription/failed.gif" alt="" />
 		<h1 class="result__title">Произошла ошибка оплаты</h1>
 		<p class="result__text result__text--failed">
@@ -34,7 +13,7 @@
 
 <script lang="ts" setup>
 import { useSubscriptionStore } from '~/store/subscribe'
-const router = useRouter()
+
 const subscriptionStore = useSubscriptionStore()
 </script>
 
