@@ -8,7 +8,7 @@
 					Простое управление аккаунтом: редактируйте данные, <br />
 					настраивайте сервис и управляйте подпиской в одном месте.
 				</p>
-				<Button v-if="accountStore.isSubscribed" @click="router.push('/key')" class="hero__btn"
+				<Button v-if="!accountStore.isSubscribed" @click="router.push('/key')" class="hero__btn"
 					>Перейти к моим ключам</Button
 				>
 			</div>

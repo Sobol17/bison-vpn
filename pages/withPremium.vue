@@ -17,7 +17,24 @@
 	<VideoSection />
 </template>
 
-<script setup></script>
+<script setup>
+import { useAccountStore } from '~/store/account'
+
+const route = useRoute()
+
+const accountStore = useAccountStore()
+
+// TODO: перед запуском в прод. убрать после проверки.
+onMounted(() => {
+	if (route.fullPath === '/withPremium') {
+		accountStore.isSubscribed = true
+		accountStore.isAuth = true
+	} else if (route.fullPath === '/') {
+		accountStore.isSubscribed = false
+		accountStore.isAuth = false
+	}
+})
+</script>
 
 <style lang="scss" scoped>
 .main-title {

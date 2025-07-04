@@ -8,9 +8,13 @@
 					<br />соединения скоростью от <span class="hero__accent--black">90 Mb/s</span> по
 					SpeedTest
 				</p>
-				<Button @click="globalStore.openSubscribe" class="hero__btn"
+				<Button
+					v-if="!accountStore.isSubscribed"
+					@click="globalStore.openSubscribe"
+					class="hero__btn"
 					>Попробовать 10 дней за 19 руб.</Button
 				>
+				<Button v-else @click="router.push('/key')" class="hero__btn">Получить ключи</Button>
 				<div class="hero__info">
 					<RatingBenefitBlock />
 					<div class="hero__users">
@@ -40,9 +44,14 @@
 </template>
 
 <script setup lang="ts">
+import { useAccountStore } from '~/store/account'
 import { useMyGlobalStore } from '~/store/global'
 
+const router = useRouter()
+
 const globalStore = useMyGlobalStore()
+
+const accountStore = useAccountStore()
 </script>
 
 <style lang="scss" scoped>

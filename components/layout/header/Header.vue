@@ -22,19 +22,6 @@
 import { useAccountStore } from '~/store/account'
 
 const accountStore = useAccountStore()
-
-const route = useRoute()
-
-// TODO: перед запуском в прод. убрать после проверки.
-onMounted(() => {
-	if (route.fullPath === '/indexPremium') {
-		accountStore.isSubscribed = true
-		accountStore.isAuth = true
-	} else if (route.fullPath === '/') {
-		accountStore.isSubscribed = false
-		accountStore.isAuth = false
-	}
-})
 </script>
 
 <style lang="scss" scoped>
