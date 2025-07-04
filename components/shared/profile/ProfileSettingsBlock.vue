@@ -1,5 +1,5 @@
 <template>
-	<div class="block">
+	<div @click="handleClick" class="block">
 		<slot name="start"></slot>
 		<div>
 			<div class="block__text">{{ title }}</div>
@@ -18,6 +18,14 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const emit = defineEmits<{
+	(e: 'click', event: MouseEvent): void
+}>()
+
+const handleClick = (event: MouseEvent) => {
+	emit('click', event)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
 	<button @click="globalStore.openLogin" class="login" title="Вход/регистрация">
 		<img src="/icons/icon_user.svg" alt="" />
-		<span>Вход/регистрация</span>
+		<span>{{ $t('login') }}</span>
 	</button>
 </template>
 

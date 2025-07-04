@@ -1,5 +1,5 @@
 <template>
-	<div class="video-section">
+	<section class="video-section">
 		<div class="video-item__wrapper">
 			<video class="video-item" src="/video/video-section_bg.mp4" muted autoplay loop></video>
 		</div>
@@ -11,7 +11,7 @@
 		</div>
 
 		<MainBanner :banner="premiumTrialBannerData" class="video-section__banner" />
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts">

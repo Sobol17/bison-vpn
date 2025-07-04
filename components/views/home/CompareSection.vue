@@ -1,5 +1,5 @@
 <template>
-	<div class="container compare-section">
+	<section class="container compare-section">
 		<div class="compare__title">VPN-ключ или приложение: в чем разница?</div>
 		<p class="compare__text">
 			Хотите максимальную анонимность, гибкость и безопасность? Ручная настройка VPN лучше, чем
@@ -32,7 +32,7 @@
 			</div>
 			<img class="compare-conclusion__icon" src="/icons/home/icon_thumb-up.svg" alt="" />
 		</div>
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts">

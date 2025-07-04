@@ -54,7 +54,7 @@ const handleClick = (event: MouseEvent) => {
 	}
 
 	&.secondary {
-		background-color: $black-90;
+		background-color: $black-80;
 		color: $white;
 
 		&:active {

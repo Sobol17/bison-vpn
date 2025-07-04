@@ -1,11 +1,11 @@
 <template>
-	<div class="container premium-includes">
+	<section class="container premium-includes">
 		<h3 class="premium-includes__title">{{ title }}</h3>
 		<PremiumIncludesList />
 		<Button @click="globalStore.openSubscribe" class="premium-includes__btn"
 			>Попробовать 10 дней за 19 руб.</Button
 		>
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup>

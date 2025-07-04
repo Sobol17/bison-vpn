@@ -1,8 +1,8 @@
 <template>
-	<div class="container tariffs">
+	<section id="tariffs" class="container tariffs">
 		<h3 class="tariffs-title">Тарифы</h3>
 		<TariffsList />
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup></script>

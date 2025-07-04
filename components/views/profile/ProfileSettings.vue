@@ -6,6 +6,7 @@
 			<div>
 				<div class="settings__item">
 					<ProfileSettingsBlock
+						@click="globalStore.openEmailChangeModal"
 						class="card"
 						title="Email:"
 						content-text="Nastyapolzazaza@gmail.com"
@@ -20,6 +21,7 @@
 				</div>
 				<div class="settings__item">
 					<ProfileSettingsBlock
+						@click="globalStore.openDeleteAccountModal"
 						class="card"
 						title="Полностью удалить данные аккаунта и информацию о подключениях"
 						content-text="Nastyapolzazaza@gmail.com"
@@ -37,7 +39,11 @@
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useMyGlobalStore } from '~/store/global'
+
+const globalStore = useMyGlobalStore()
+</script>
 
 <style scoped lang="scss">
 .profile-section {

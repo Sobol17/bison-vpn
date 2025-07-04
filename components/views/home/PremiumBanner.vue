@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<section class="container">
 		<div class="banner">
 			<div class="banner__left">
 				<div class="banner__badge">🔥 ТОЛЬКО СЕЙЧАС</div>
@@ -27,7 +27,7 @@
 				/>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup>

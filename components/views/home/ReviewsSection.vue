@@ -1,5 +1,5 @@
 <template>
-	<div class="container reviews">
+	<section id="reviews" class="container reviews">
 		<h3 class="reviews__title">Отзывы юзеров о Premium</h3>
 		<div class="reviews__items">
 			<ReviewCard
@@ -12,7 +12,7 @@
 		<Button v-if="!isAllReviewsShow" @click="showAllReviews" class="reviews__btn" tertiary
 			>Показать больше отзывов (+{{ reviewsList.length - 8 }})</Button
 		>
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup>

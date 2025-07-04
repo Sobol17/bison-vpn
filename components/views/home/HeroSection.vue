@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-container">
+	<section class="bg-container">
 		<div class="container hero__container">
 			<div class="hero__content">
 				<h1 class="title">BISON VPN SERVICE</h1>
@@ -36,7 +36,7 @@
 				<video src="/video/hero.mp4" muted autoplay loop></video>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts">

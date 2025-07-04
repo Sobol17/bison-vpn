@@ -68,7 +68,9 @@
 										<img src="/icons/money.svg" alt="" />
 									</template>
 									<template #end>
-										<button class="subscription__cancel">Отменить</button>
+										<button @click="globalStore.openCancellationModal" class="subscription__cancel">
+											Отменить
+										</button>
 									</template>
 								</ProfileSettingsBlock>
 							</div>
@@ -101,6 +103,9 @@
 <script lang="ts" setup>
 import { subscribeBenefits } from '~/shared/data/globalData'
 import { subscriptionDetailData } from '~/shared/data/profileData'
+import { useMyGlobalStore } from '~/store/global'
+
+const globalStore = useMyGlobalStore()
 </script>
 
 <style scoped lang="scss">

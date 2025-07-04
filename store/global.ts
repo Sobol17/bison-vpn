@@ -4,6 +4,9 @@ export const useMyGlobalStore = defineStore('global', () => {
 	const isLoginModalShow = ref(false)
 	const isSubscribeModalShow = ref(false)
 	const isCopyChipShow = ref(false)
+	const isDeletingAccountModal = ref(false)
+	const isEmailChangingModal = ref()
+	const isCancellationModalShow = ref()
 
 	const openLogin = () => {
 		isLoginModalShow.value = true
@@ -11,6 +14,18 @@ export const useMyGlobalStore = defineStore('global', () => {
 
 	const openSubscribe = () => {
 		isSubscribeModalShow.value = true
+	}
+
+	const openDeleteAccountModal = () => {
+		isDeletingAccountModal.value = true
+	}
+
+	const openEmailChangeModal = () => {
+		isEmailChangingModal.value = true
+	}
+
+	const openCancellationModal = () => {
+		isCancellationModalShow.value = true
 	}
 
 	const openCopyChip = () => {
@@ -24,6 +39,9 @@ export const useMyGlobalStore = defineStore('global', () => {
 	const hideModals = () => {
 		isLoginModalShow.value = false
 		isSubscribeModalShow.value = false
+		isDeletingAccountModal.value = false
+		isEmailChangingModal.value = false
+		isCancellationModalShow.value = false
 	}
 
 	return {
@@ -34,5 +52,11 @@ export const useMyGlobalStore = defineStore('global', () => {
 		openSubscribe,
 		isSubscribeModalShow,
 		hideModals,
+		isDeletingAccountModal,
+		openDeleteAccountModal,
+		openEmailChangeModal,
+		isEmailChangingModal,
+		openCancellationModal,
+		isCancellationModalShow,
 	}
 })

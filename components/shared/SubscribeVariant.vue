@@ -3,8 +3,8 @@
 		<span class="sub__circle">
 			<span class="sub__circle-dot"></span>
 		</span>
-		<div class="sub__duration">{{ duration }}</div>
-		<div class="sub__price">
+		<div class="sub__label" :class="{ full: !price }">{{ label }}</div>
+		<div class="sub__price" v-if="price">
 			{{ price }} р. <span class="sub__price-detail">({{ detailPriceText }})</span>
 		</div>
 		<div v-if="tag === 'recommended'" class="sub__badge green">RECCOMMENDED</div>
@@ -86,11 +86,15 @@ const handleClick = () => {
 		}
 	}
 
-	&__duration {
+	&__label {
 		color: $grey-20;
 		font-size: 18px;
 		font-weight: 500;
 		flex-basis: 90px;
+
+		&.full {
+			flex-basis: auto;
+		}
 	}
 
 	&__price {

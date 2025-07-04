@@ -1,6 +1,6 @@
 <template>
 	<div @click.stop="handleCloseModal" class="modal">
-		<div @click.stop class="modal__inner">
+		<div @click.stop class="modal__inner" :class="{ white: dark === false }">
 			<button @click="handleCloseModal" class="modal__close">
 				<img src="/icons/input/icon_delete.svg" alt="" />
 			</button>
@@ -14,6 +14,14 @@
 
 <script setup lang="ts">
 import { useMyGlobalStore } from '~/store/global'
+
+interface Props {
+	dark?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+	dark: true,
+})
 
 const globalStore = useMyGlobalStore()
 
@@ -50,6 +58,11 @@ const handleCloseModal = () => {
 			height: 100%;
 			border-radius: 0;
 			overflow-y: auto;
+		}
+
+		&.white {
+			background-color: $grey-10;
+			box-shadow: 0px 2px 73.6px 0px rgba(156, 156, 156, 0.2);
 		}
 	}
 

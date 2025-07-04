@@ -15,6 +15,20 @@ export default defineNuxtConfig({
 	},
 
 	components: [{ path: '~/components', pathPrefix: false }],
-	modules: ['@nuxt/image', '@pinia/nuxt'],
+	modules: ['@nuxt/image', '@pinia/nuxt', '@nuxtjs/i18n'],
+	i18n: {
+		locales: [
+			{ code: 'en', name: 'English', file: 'en.json' },
+			{ code: 'ru', name: 'Русский', file: 'ru.json' },
+		],
+		defaultLocale: 'ru',
+		lazy: true,
+		strategy: 'no_prefix',
+		detectBrowserLanguage: {
+			useLocalStorage: true,
+			localStorageKey: 'app-locale',
+			fallbackLocale: 'ru',
+		},
+	},
 	devtools: { enabled: true },
 })

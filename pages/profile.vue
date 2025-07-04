@@ -1,7 +1,7 @@
 <template>
 	<ProfileHero />
 	<ProfileSettings />
-	<ProfileSubscription v-if="!accountStore.isSubscribed" />
+	<ProfileSubscription v-if="accountStore.isSubscribed" />
 	<div v-else class="container profile__tariffs">
 		<h2 class="profile-title">Подписка</h2>
 		<TariffsList />

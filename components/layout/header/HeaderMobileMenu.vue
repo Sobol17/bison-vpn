@@ -14,7 +14,7 @@
 			<div class="burger-content__body">
 				<Button @click="globalStore.openLogin">
 					<IconUser />
-					<span>Вход/регистрация</span>
+					<span>{{ t('login') }}</span>
 					<ArrowRight />
 				</Button>
 
@@ -28,9 +28,10 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { useMyGlobalStore } from '~/store/global'
 
+const { t } = useI18n()
 const globalStore = useMyGlobalStore()
 
 const isMenuShow = ref(false)

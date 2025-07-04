@@ -1,5 +1,5 @@
 <template>
-	<div class="container faq-section">
+	<section class="container faq-section">
 		<div class="faq__title">Часто спрашивают</div>
 		<p class="faq__text">
 			У вас остались вопросы? Мы собрали самые популярные запросы пользователей и подготовили
@@ -18,7 +18,7 @@
 				<img class="faq__image" src="/images/home/faq.jpg" alt="" />
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts">

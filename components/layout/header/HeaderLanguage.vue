@@ -2,7 +2,7 @@
 	<div class="language-wrapper">
 		<button @click="toggleDropdown" class="language" title="Смена языка">
 			<img src="/icons/icon_planet.svg" alt="" />
-			<span>EN</span>
+			<span>{{ $t('current_language') }} </span>
 			<img :class="{ rotate: isDropdownShow }" src="/icons/icon_angle.svg" alt="" />
 		</button>
 
@@ -12,7 +12,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const isDropdownShow = ref(false)
 
 const toggleDropdown = () => {

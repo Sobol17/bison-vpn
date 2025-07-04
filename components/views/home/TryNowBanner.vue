@@ -1,7 +1,7 @@
 <template>
-	<div class="container">
+	<section class="container">
 		<MainBanner :banner="tryNowBannerData" />
-	</div>
+	</section>
 </template>
 
 <script lang="ts" setup>

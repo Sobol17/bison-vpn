@@ -18,6 +18,18 @@
 		<transition name="fade">
 			<CopyChip v-if="globalStore.isCopyChipShow" />
 		</transition>
+
+		<transition name="fade">
+			<DeleteAccount v-if="globalStore.isDeletingAccountModal" />
+		</transition>
+
+		<transition name="fade">
+			<ChangeEmail v-if="globalStore.isEmailChangingModal" />
+		</transition>
+
+		<transition name="fade">
+			<CancelSubscription v-if="globalStore.isCancellationModalShow" />
+		</transition>
 	</div>
 </template>
 

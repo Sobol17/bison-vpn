@@ -1,18 +1,20 @@
 <template>
 	<ul class="nav">
 		<li class="nav-item">
-			<NuxtLink class="nav-item__link" to="/about">О сервисе</NuxtLink>
+			<NuxtLink class="nav-item__link" to="/#about">{{ t('about') }}</NuxtLink>
 		</li>
 		<li class="nav-item">
-			<NuxtLink class="nav-item__link" to="/tariffs">Тарифы</NuxtLink>
+			<NuxtLink class="nav-item__link" to="/#tariffs">{{ t('tariffs') }}</NuxtLink>
 		</li>
 		<li class="nav-item">
-			<NuxtLink class="nav-item__link" to="/reviews">Отзывы</NuxtLink>
+			<NuxtLink class="nav-item__link" to="/#reviews">{{ t('reviews') }}</NuxtLink>
 		</li>
 	</ul>
 </template>
 
-<script setup></script>
+<script setup>
+const { t } = useI18n()
+</script>
 
 <style lang="scss" scoped>
 .nav {

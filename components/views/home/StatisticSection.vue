@@ -1,5 +1,5 @@
 <template>
-	<div class="container statistic">
+	<section class="container statistic">
 		<StatsBlock
 			class="statistic-block"
 			v-for="item in statisticsData"
@@ -7,7 +7,7 @@
 			:text="item.text"
 			:show-icon="item.showIcon"
 		/>
-	</div>
+	</section>
 </template>
 
 <script setup>

@@ -17,7 +17,7 @@
 							:key="variant.id"
 							:active="variant.id === selectedVariant.id"
 							:price="variant.price"
-							:duration="variant.duration"
+							:label="variant.label"
 							:detailPriceText="variant.detailPriceText"
 							:tag="variant.tag"
 							@setActive="setActiveVariant(variant)"

@@ -1,7 +1,7 @@
 <template>
 	<div class="history">
 		<div class="history__title">История активаций:</div>
-		<div class="history__items">
+		<div class="history__items" v-if="paymentsHistoryData.length > 0">
 			<ProfileSettingsBlock
 				class="history__item"
 				v-for="item in paymentsHistoryData"
@@ -12,6 +12,10 @@
 					<button class="history__download"><IconDownload /></button>
 				</template>
 			</ProfileSettingsBlock>
+		</div>
+		<div class="history__empty">
+			<img src="/icons/history_empty.svg" alt="" />
+			<div class="history__empty-title">История пока отсутствует</div>
 		</div>
 	</div>
 </template>
@@ -79,6 +83,21 @@ import { paymentsHistoryData } from '~/shared/data/profileData'
 			background-color: $grey-60;
 			opacity: 0.8;
 			border-radius: 12px;
+		}
+	}
+
+	&__empty {
+		margin-top: 50px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		row-gap: 20px;
+
+		&-title {
+			color: $black-90;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 130%;
 		}
 	}
 }

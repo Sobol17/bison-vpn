@@ -1,5 +1,5 @@
 <template>
-	<div class="advantages container">
+	<section id="about" class="advantages container">
 		<div class="advantages__step advantages__step-1">
 			<div class="step__num">/ 01</div>
 			<div class="step__title">Простая установка</div>
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts"></script>

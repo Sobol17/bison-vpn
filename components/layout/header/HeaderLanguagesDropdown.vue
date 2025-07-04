@@ -1,19 +1,19 @@
 <template>
 	<div class="dropdown">
 		<ul class="dropdown__list">
-			<li class="dropdown__list-item">
+			<li @click="switchLanguage('en')" class="dropdown__list-item">
 				<img src="/icons/countries/usa.svg" alt="" />
 				<span>English</span>
 			</li>
-			<li class="dropdown__list-item">
+			<li @click="switchLanguage('ru')" class="dropdown__list-item">
 				<img src="/icons/countries/russia.svg" alt="" />
 				<span>Russian</span>
 			</li>
-			<li class="dropdown__list-item">
+			<li @click="switchLanguage('en')" class="dropdown__list-item">
 				<img src="/icons/countries/germany.svg" alt="" />
 				<span>German</span>
 			</li>
-			<li class="dropdown__list-item">
+			<li @click="switchLanguage('en')" class="dropdown__list-item">
 				<img src="/icons/countries/france.svg" alt="" />
 				<span>French</span>
 			</li>
@@ -21,7 +21,13 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const { locale, setLocale } = useI18n()
+
+const switchLanguage = string => {
+	setLocale((locale.value = string))
+}
+</script>
 
 <style lang="scss" scoped>
 .dropdown {
