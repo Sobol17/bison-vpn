@@ -15,9 +15,9 @@
 					<div class="step__item">
 						<div class="step__item-line">
 							<CircleLabel class="step__item-label">1</CircleLabel>
-							<img src="/icons/line.svg" alt="" />
+							<img src="/icons/line-main.svg" alt="" />
 							<CircleLabel class="step__line-label">2</CircleLabel>
-							<img src="/icons/line.svg" alt="" />
+							<img src="/icons/line-main.svg" alt="" />
 
 							<CircleLabel class="step__line-label" active
 								><img src="/icons/check.svg" alt=""
