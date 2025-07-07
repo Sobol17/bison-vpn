@@ -84,6 +84,7 @@ defineProps<Props>()
 		justify-content: center;
 		border-radius: 50%;
 		background-color: #26272c;
+		flex-shrink: 0;
 	}
 
 	&__content {

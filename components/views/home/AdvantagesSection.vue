@@ -116,7 +116,11 @@
 					</div>
 				</div>
 				<div class="step__content-right">
-					<img class="step__content-img" src="/images/home/step-3.png" alt="" />
+					<img
+						class="step__content-img step__content-img--full"
+						src="/images/home/step-3.png"
+						alt=""
+					/>
 				</div>
 			</div>
 		</div>
@@ -235,6 +239,10 @@
 			&--iphone {
 				width: 252px;
 				height: 520px;
+			}
+
+			&--full {
+				max-width: 100%;
 			}
 		}
 	}

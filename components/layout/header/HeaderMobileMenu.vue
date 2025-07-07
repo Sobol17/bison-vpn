@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="header__burger">
 		<button @click="toggleMenu" class="burger">
 			<img src="/icons/icon_burger.svg" alt="" />
 		</button>
@@ -41,7 +41,7 @@ const toggleMenu = () => {
 </script>
 
 <style scoped lang="scss">
-.burger {
+.header__burger {
 	display: none;
 
 	@include tablet {

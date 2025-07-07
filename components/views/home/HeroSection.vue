@@ -18,10 +18,10 @@
 				<div class="hero__info">
 					<RatingBenefitBlock />
 					<div class="hero__users">
-						<div class="hero__users-title"><span>5 234</span> пользователей уже с нами</div>
+						<div class="hero__users-title"><span>5 234</span> юзеров уже с нами</div>
 						<div class="hero__users-body">
 							<div class="hero__users-avatars">
-								<img v-for="user in 8" class="hero__users-avatar" src="/images/user.png" alt="" />
+								<img v-for="user in 4" class="hero__users-avatar" src="/images/user.png" alt="" />
 							</div>
 							<div class="hero__users-count"><span>...</span> + 4 995</div>
 						</div>
@@ -99,13 +99,17 @@ const accountStore = useAccountStore()
 
 .hero {
 	&__content {
-		width: 50%;
-		margin: 70px 0px;
+		width: 65%;
+		background-color: #000504;
+		padding: 70px 0px;
+		position: relative;
+		z-index: 2;
 
 		@include tablet {
 			margin: 32px 0px;
 			width: 100%;
 			position: relative;
+			background: transparent;
 			z-index: 2;
 		}
 
@@ -214,12 +218,24 @@ const accountStore = useAccountStore()
 			border-radius: 82px;
 			background: var(--grey-10, #f7f7f7);
 			color: $black-90;
+
+			@include tablet {
+				padding: 5px 10px;
+				font-size: 16px;
+				font-weight: 600;
+			}
 		}
 
 		&--black {
 			border-radius: 82px;
 			padding: 8px 12px;
 			border: 1px solid var(--Primary, #b2f861);
+
+			@include tablet {
+				padding: 5px 10px;
+				font-size: 16px;
+				font-weight: 600;
+			}
 		}
 	}
 
@@ -235,7 +251,7 @@ const accountStore = useAccountStore()
 		column-gap: 24px;
 
 		@include big-mobile {
-			flex-wrap: wrap;
+			column-gap: 16px;
 		}
 	}
 
@@ -248,10 +264,18 @@ const accountStore = useAccountStore()
 		);
 		padding: 12px;
 
+		@include big-mobile {
+			padding: 10px;
+		}
+
 		&-title {
 			color: $grey-25;
 			font-size: 13px;
 			line-height: 130%;
+
+			@include big-mobile {
+				font-size: 12px;
+			}
 
 			span {
 				font-weight: 600;

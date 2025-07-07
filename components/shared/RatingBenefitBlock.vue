@@ -50,11 +50,19 @@
 		font-size: 20px;
 		font-weight: 800;
 		color: $grey-25;
+
+		@include big-mobile {
+			font-size: 16px;
+		}
 	}
 
 	&-count {
 		font-size: 11px;
 		color: $grey-100;
+
+		@include big-mobile {
+			font-size: 10px;
+		}
 	}
 
 	&-stars {

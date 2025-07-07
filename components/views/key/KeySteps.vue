@@ -18,7 +18,9 @@
 								vless://01dd5086-ab97-47e5-ad9f-d942c84b023c@lon1.vpntype.dev:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#VPNTYPE
 								🇬🇧 London
 							</p>
-							<Button @click="handleCopy" secondary class="settings__btn">Копировать</Button>
+							<Button @click="handleCopy" secondary class="settings__btn">
+								{{ copiedText ? 'Ключ успешно скопирован' : 'Копировать' }}
+							</Button>
 							<p class="settings__note">
 								*Используя данный ключ, вы загрузите в приложение-клиент полный пак из 20 серверов
 							</p>
@@ -30,7 +32,7 @@
 					</div>
 				</div>
 
-				<div class="step__content-right mt-90">
+				<div class="step__content-right mt-90 mobile-hide">
 					<div class="step__content-img-wrapper">
 						<img
 							class="step__content-img step__content-img--iphone"
@@ -121,6 +123,7 @@
 						</ul>
 						<img class="step__tutorial-img" src="/images/tutorial.png" alt="" />
 					</div>
+					<p class="step__content-hint">Мини-инструкция</p>
 				</div>
 
 				<div class="step__content-right">
@@ -131,6 +134,7 @@
 							alt=""
 						/>
 					</div>
+					<p class="step__content-hint">Видео-инструкция</p>
 				</div>
 			</div>
 		</div>
@@ -144,7 +148,7 @@ import WindowsIcon from '~/components/icons/devices/WindowsIcon.vue'
 import { useCopyToClipboard } from '~/shared/utils/copy'
 import { useMyGlobalStore } from '~/store/global'
 
-const { copy } = useCopyToClipboard()
+const { copy, copiedText } = useCopyToClipboard()
 
 const globalStore = useMyGlobalStore()
 
@@ -162,6 +166,10 @@ const handleCopy = () => {
 	display: flex;
 	flex-direction: column;
 	row-gap: 100px;
+
+	@include big-mobile {
+		row-gap: 50px;
+	}
 }
 
 .step {
@@ -201,13 +209,22 @@ const handleCopy = () => {
 		align-items: stretch;
 		justify-content: space-between;
 		column-gap: 50px;
-
 		margin-top: 32px;
 
 		@include tablet {
 			flex-direction: column;
 			row-gap: 40px;
 			align-items: center;
+		}
+
+		&-hint {
+			text-align: center;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 130%;
+			color: $grey-100;
+			margin-top: 16px;
 		}
 
 		&-left {
@@ -448,6 +465,12 @@ const handleCopy = () => {
 
 	@include tablet {
 		margin-top: 0;
+	}
+}
+
+.mobile-hide {
+	@include big-mobile {
+		display: none;
 	}
 }
 </style>
